@@ -1,3 +1,5 @@
-import { Telegraf } from 'telegraf';
+import { Telegram } from 'telegraf';
 
-export const telegram = new Telegraf(process.env.BOT_TOKEN);
+const telegram = new Telegram(process.env.TELEGRAM_TOKEN, {});
+
+export { telegram };

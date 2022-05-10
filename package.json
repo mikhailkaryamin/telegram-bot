@@ -7,15 +7,22 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "tsc",
+    "start": "yarn run serve",
+    "build": "yarn run lint && yarn run build-ts",
+    "serve": "NODE_ENV=production node dist/bot.js",
+    "watch-node": "nodemon dist/bot.js",
+    "build-ts": "tsc",
     "lint": "eslint src/**/*.ts",
+    "serve-debug": "nodemon --inspect dist/bot.js",
     "format": "eslint src/**/*.ts --fix"
   },
   "dependencies": {
+    "dotenv": "16.0.0",
     "husky": "7.0.4",
     "telegraf": "4.8.1"
   },
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
     "@types/node": "17.0.31",
     "@typescript-eslint/eslint-plugin": "5.22.0",
     "@typescript-eslint/parser": "5.22.0",
